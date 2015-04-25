@@ -17,6 +17,10 @@
 		5E11A3D51AEB77C600C4CFA6 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E11A3D21AEB77C600C4CFA6 /* TwitterKit.framework */; };
 		5E11A3D61AEB77C600C4CFA6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5E11A3D31AEB77C600C4CFA6 /* TwitterKitResources.bundle */; };
 		5E11A3D71AEB77C600C4CFA6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E11A3D41AEB77C600C4CFA6 /* Fabric.framework */; };
+		5E11A3DB1AEB88DB00C4CFA6 /* WebRequester.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3DA1AEB88DB00C4CFA6 /* WebRequester.m */; };
+		5E11A3DF1AEBA9B900C4CFA6 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3DE1AEBA9B900C4CFA6 /* Model.m */; };
+		5E11A3E91AEBC83200C4CFA6 /* FetchTweets.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3E81AEBC83200C4CFA6 /* FetchTweets.m */; };
+		5E11A3EC1AEBE28600C4CFA6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3EB1AEBE28600C4CFA6 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +50,14 @@
 		5E11A3D21AEB77C600C4CFA6 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		5E11A3D31AEB77C600C4CFA6 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		5E11A3D41AEB77C600C4CFA6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		5E11A3D91AEB88DB00C4CFA6 /* WebRequester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebRequester.h; sourceTree = "<group>"; };
+		5E11A3DA1AEB88DB00C4CFA6 /* WebRequester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebRequester.m; sourceTree = "<group>"; };
+		5E11A3DD1AEBA9B900C4CFA6 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		5E11A3DE1AEBA9B900C4CFA6 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		5E11A3E71AEBC83200C4CFA6 /* FetchTweets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchTweets.h; sourceTree = "<group>"; };
+		5E11A3E81AEBC83200C4CFA6 /* FetchTweets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTweets.m; sourceTree = "<group>"; };
+		5E11A3EA1AEBE28600C4CFA6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		5E11A3EB1AEBE28600C4CFA6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +106,12 @@
 			children = (
 				5E11A3AF1AEB76B800C4CFA6 /* AppDelegate.h */,
 				5E11A3B01AEB76B800C4CFA6 /* AppDelegate.m */,
+				5E11A3DC1AEBA99600C4CFA6 /* Business */,
+				5E11A3D81AEB88A000C4CFA6 /* HTTP */,
 				5E11A3B21AEB76B800C4CFA6 /* ViewController.h */,
 				5E11A3B31AEB76B800C4CFA6 /* ViewController.m */,
+				5E11A3EA1AEBE28600C4CFA6 /* HomeViewController.h */,
+				5E11A3EB1AEBE28600C4CFA6 /* HomeViewController.m */,
 				5E11A3B51AEB76B800C4CFA6 /* Main.storyboard */,
 				5E11A3B81AEB76B800C4CFA6 /* Images.xcassets */,
 				5E11A3BA1AEB76B800C4CFA6 /* LaunchScreen.xib */,
@@ -128,6 +144,34 @@
 				5E11A3C61AEB76B800C4CFA6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E11A3D81AEB88A000C4CFA6 /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				5E11A3D91AEB88DB00C4CFA6 /* WebRequester.h */,
+				5E11A3DA1AEB88DB00C4CFA6 /* WebRequester.m */,
+				5E11A3E61AEBC81600C4CFA6 /* Parser */,
+			);
+			name = HTTP;
+			sourceTree = "<group>";
+		};
+		5E11A3DC1AEBA99600C4CFA6 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				5E11A3DD1AEBA9B900C4CFA6 /* Model.h */,
+				5E11A3DE1AEBA9B900C4CFA6 /* Model.m */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		5E11A3E61AEBC81600C4CFA6 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				5E11A3E71AEBC83200C4CFA6 /* FetchTweets.h */,
+				5E11A3E81AEBC83200C4CFA6 /* FetchTweets.m */,
+			);
+			name = Parser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +295,10 @@
 				5E11A3B41AEB76B800C4CFA6 /* ViewController.m in Sources */,
 				5E11A3B11AEB76B800C4CFA6 /* AppDelegate.m in Sources */,
 				5E11A3AE1AEB76B800C4CFA6 /* main.m in Sources */,
+				5E11A3E91AEBC83200C4CFA6 /* FetchTweets.m in Sources */,
+				5E11A3DB1AEB88DB00C4CFA6 /* WebRequester.m in Sources */,
+				5E11A3EC1AEBE28600C4CFA6 /* HomeViewController.m in Sources */,
+				5E11A3DF1AEBA9B900C4CFA6 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

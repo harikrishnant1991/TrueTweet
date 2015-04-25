@@ -17,10 +17,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="gU9-Lh-OV2" kind="show" identifier="LoginToHomeScreenSegue" id="1gZ-hg-4Pw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="379.5" y="277.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MhE-Zp-5Sw">
+            <objects>
+                <viewController id="gU9-Lh-OV2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Bw-n0-pPe"/>
+                        <viewControllerLayoutGuide type="bottom" id="ctv-L8-JIE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="95f-G4-oTK">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UIf-Wh-Ql4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UIf-Wh-Ql4" secondAttribute="bottom" id="1VL-Du-nUs"/>
+                            <constraint firstAttribute="trailing" secondItem="UIf-Wh-Ql4" secondAttribute="trailing" id="Cuh-V9-laM"/>
+                            <constraint firstItem="UIf-Wh-Ql4" firstAttribute="top" secondItem="95f-G4-oTK" secondAttribute="top" constant="20" id="SKc-39-HaV"/>
+                            <constraint firstItem="UIf-Wh-Ql4" firstAttribute="leading" secondItem="95f-G4-oTK" secondAttribute="leading" id="Ssj-xJ-LHO"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="UIf-Wh-Ql4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1VL-Du-nUs"/>
+                                <exclude reference="Cuh-V9-laM"/>
+                                <exclude reference="SKc-39-HaV"/>
+                                <exclude reference="Ssj-xJ-LHO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="UIf-Wh-Ql4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1VL-Du-nUs"/>
+                                <include reference="Cuh-V9-laM"/>
+                                <include reference="SKc-39-HaV"/>
+                                <include reference="Ssj-xJ-LHO"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0r-NU-Jc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1105.5" y="277.5"/>
         </scene>
     </scenes>
 </document>
