@@ -14,6 +14,9 @@
 		5E11A3B91AEB76B800C4CFA6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E11A3B81AEB76B800C4CFA6 /* Images.xcassets */; };
 		5E11A3BC1AEB76B800C4CFA6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E11A3BA1AEB76B800C4CFA6 /* LaunchScreen.xib */; };
 		5E11A3C81AEB76B800C4CFA6 /* TrueTweetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3C71AEB76B800C4CFA6 /* TrueTweetTests.m */; };
+		5E11A3D51AEB77C600C4CFA6 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E11A3D21AEB77C600C4CFA6 /* TwitterKit.framework */; };
+		5E11A3D61AEB77C600C4CFA6 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5E11A3D31AEB77C600C4CFA6 /* TwitterKitResources.bundle */; };
+		5E11A3D71AEB77C600C4CFA6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E11A3D41AEB77C600C4CFA6 /* Fabric.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		5E11A3C11AEB76B800C4CFA6 /* TrueTweetTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrueTweetTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E11A3C61AEB76B800C4CFA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E11A3C71AEB76B800C4CFA6 /* TrueTweetTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrueTweetTests.m; sourceTree = "<group>"; };
+		5E11A3D21AEB77C600C4CFA6 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		5E11A3D31AEB77C600C4CFA6 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		5E11A3D41AEB77C600C4CFA6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E11A3D51AEB77C600C4CFA6 /* TwitterKit.framework in Frameworks */,
+				5E11A3D71AEB77C600C4CFA6 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +71,9 @@
 		5E11A39F1AEB76B800C4CFA6 = {
 			isa = PBXGroup;
 			children = (
+				5E11A3D21AEB77C600C4CFA6 /* TwitterKit.framework */,
+				5E11A3D31AEB77C600C4CFA6 /* TwitterKitResources.bundle */,
+				5E11A3D41AEB77C600C4CFA6 /* Fabric.framework */,
 				5E11A3AA1AEB76B800C4CFA6 /* TrueTweet */,
 				5E11A3C41AEB76B800C4CFA6 /* TrueTweetTests */,
 				5E11A3A91AEB76B800C4CFA6 /* Products */,
@@ -129,6 +140,7 @@
 				5E11A3A41AEB76B800C4CFA6 /* Sources */,
 				5E11A3A51AEB76B800C4CFA6 /* Frameworks */,
 				5E11A3A61AEB76B800C4CFA6 /* Resources */,
+				5E11A3D11AEB775600C4CFA6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -199,6 +211,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E11A3D61AEB77C600C4CFA6 /* TwitterKitResources.bundle in Resources */,
 				5E11A3B71AEB76B800C4CFA6 /* Main.storyboard in Resources */,
 				5E11A3BC1AEB76B800C4CFA6 /* LaunchScreen.xib in Resources */,
 				5E11A3B91AEB76B800C4CFA6 /* Images.xcassets in Resources */,
@@ -213,6 +226,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E11A3D11AEB775600C4CFA6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run e02476a35826c15c7c9d88b628fe991851a6dd73 94ea7bed16b81f2a61aeec7abf6967cf961f42b89a9e0d15abdd18e4fdc6b0f9";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5E11A3A41AEB76B800C4CFA6 /* Sources */ = {
@@ -349,6 +378,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TrueTweet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -359,6 +392,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = TrueTweet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
