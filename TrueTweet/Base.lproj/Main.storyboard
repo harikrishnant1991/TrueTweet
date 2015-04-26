@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -25,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="379.5" y="277.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="MhE-Zp-5Sw">
             <objects>
-                <viewController id="gU9-Lh-OV2" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gU9-Lh-OV2" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Bw-n0-pPe"/>
                         <viewControllerLayoutGuide type="bottom" id="ctv-L8-JIE"/>
@@ -39,7 +40,37 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UIf-Wh-Ql4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gU9-Lh-OV2" id="bpL-Ht-Bg9"/>
+                                    <outlet property="delegate" destination="gU9-Lh-OV2" id="BXT-4X-vEV"/>
+                                </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49i-ez-1XU">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.080225848228442587" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="LFi-UN-FVH"/>
+                                    <constraint firstAttribute="width" secondItem="49i-ez-1XU" secondAttribute="height" multiplier="1:1" id="VpW-mv-Ovf"/>
+                                </constraints>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="LFi-UN-FVH"/>
+                                        <exclude reference="VpW-mv-Ovf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="LFi-UN-FVH"/>
+                                        <include reference="VpW-mv-Ovf"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="filterButtonClicked:" destination="gU9-Lh-OV2" eventType="touchUpInside" id="flL-Ek-Wu3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -47,30 +78,42 @@
                             <constraint firstAttribute="trailing" secondItem="UIf-Wh-Ql4" secondAttribute="trailing" id="Cuh-V9-laM"/>
                             <constraint firstItem="UIf-Wh-Ql4" firstAttribute="top" secondItem="95f-G4-oTK" secondAttribute="top" constant="20" id="SKc-39-HaV"/>
                             <constraint firstItem="UIf-Wh-Ql4" firstAttribute="leading" secondItem="95f-G4-oTK" secondAttribute="leading" id="Ssj-xJ-LHO"/>
+                            <constraint firstAttribute="trailing" secondItem="49i-ez-1XU" secondAttribute="trailing" constant="16" id="ag6-qy-ckz"/>
+                            <constraint firstAttribute="bottom" secondItem="49i-ez-1XU" secondAttribute="bottom" constant="20" id="epa-jz-FNj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="UIf-Wh-Ql4"/>
+                                <exclude reference="49i-ez-1XU"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="1VL-Du-nUs"/>
                                 <exclude reference="Cuh-V9-laM"/>
                                 <exclude reference="SKc-39-HaV"/>
                                 <exclude reference="Ssj-xJ-LHO"/>
+                                <exclude reference="ag6-qy-ckz"/>
+                                <exclude reference="epa-jz-FNj"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="UIf-Wh-Ql4"/>
+                                <include reference="49i-ez-1XU"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="1VL-Du-nUs"/>
                                 <include reference="Cuh-V9-laM"/>
                                 <include reference="SKc-39-HaV"/>
                                 <include reference="Ssj-xJ-LHO"/>
+                                <include reference="ag6-qy-ckz"/>
+                                <include reference="epa-jz-FNj"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="filterButton" destination="49i-ez-1XU" id="whL-XO-lAR"/>
+                        <outlet property="tweetTableView" destination="UIf-Wh-Ql4" id="CHc-Qx-FR0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m0r-NU-Jc7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -41,8 +41,9 @@
         {
             [paramString appendFormat:@"%@=%@&", key, paramDictionary[key]];
         }
-        
-        NSURL *serviceURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@?%@", BASE_URL, service, paramString]];
+        NSString *urlString = [NSString stringWithFormat:@"%@/%@?%@", BASE_URL, service, paramString];
+        NSURL *serviceURL = [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:
+                                                  NSUTF8StringEncoding]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:serviceURL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:60.0];
         [NSURLConnection connectionWithRequest:request delegate:self];
     }
@@ -62,15 +63,32 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     NSError *error = nil;
-    NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:webData
-                                                                       options:0
+    NSMutableDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:webData
+                                                                       options:NSJSONReadingMutableContainers
                                                                          error:&error];
     if (error && serviceCompletionBlock)
     {
         serviceCompletionBlock(100, SERVER_ERROR_MESSAGE, nil, error);
         serviceCompletionBlock = nil;
+        return;
     }
-    else if (serviceCompletionBlock)
+    if ([responseDictionary[RESPONSE_RESULTS_KEY] isKindOfClass:[NSString class]])
+    {
+        NSString *responseString = responseDictionary[RESPONSE_RESULTS_KEY];
+        if (responseString && ![responseString isEqualToString:@""])
+        {
+            NSData *data = [responseString dataUsingEncoding:NSUTF8StringEncoding];
+            error = nil;
+            responseDictionary[RESPONSE_RESULTS_KEY] = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            if (error && serviceCompletionBlock)
+            {
+                serviceCompletionBlock(100, SERVER_ERROR_MESSAGE, nil, error);
+                serviceCompletionBlock = nil;
+                return;
+            }
+        }
+    }
+    if (serviceCompletionBlock)
     {
         serviceCompletionBlock([responseDictionary[RESPONSE_STATUS_KEY] integerValue], responseDictionary[RESPONSE_MESSAGE_KEY], responseDictionary[RESPONSE_RESULTS_KEY], nil);
         serviceCompletionBlock = nil;

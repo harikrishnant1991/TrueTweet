@@ -21,6 +21,9 @@
 		5E11A3DF1AEBA9B900C4CFA6 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3DE1AEBA9B900C4CFA6 /* Model.m */; };
 		5E11A3E91AEBC83200C4CFA6 /* FetchTweets.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3E81AEBC83200C4CFA6 /* FetchTweets.m */; };
 		5E11A3EC1AEBE28600C4CFA6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3EB1AEBE28600C4CFA6 /* HomeViewController.m */; };
+		5E11A3F01AEC383E00C4CFA6 /* FilterAlertView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E11A3EF1AEC383E00C4CFA6 /* FilterAlertView.xib */; };
+		5E11A3F31AEC3C2500C4CFA6 /* FilterAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E11A3F21AEC3C2500C4CFA6 /* FilterAlertView.m */; };
+		5E5588221AEC76C90048715F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E5588211AEC76C90048715F /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,11 @@
 		5E11A3E81AEBC83200C4CFA6 /* FetchTweets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchTweets.m; sourceTree = "<group>"; };
 		5E11A3EA1AEBE28600C4CFA6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		5E11A3EB1AEBE28600C4CFA6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		5E11A3EF1AEC383E00C4CFA6 /* FilterAlertView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterAlertView.xib; sourceTree = "<group>"; };
+		5E11A3F11AEC3C2500C4CFA6 /* FilterAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterAlertView.h; sourceTree = "<group>"; };
+		5E11A3F21AEC3C2500C4CFA6 /* FilterAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterAlertView.m; sourceTree = "<group>"; };
+		5E5588201AEC76C90048715F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		5E5588211AEC76C90048715F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +114,7 @@
 			children = (
 				5E11A3AF1AEB76B800C4CFA6 /* AppDelegate.h */,
 				5E11A3B01AEB76B800C4CFA6 /* AppDelegate.m */,
+				5E11A3ED1AEC37FD00C4CFA6 /* View */,
 				5E11A3DC1AEBA99600C4CFA6 /* Business */,
 				5E11A3D81AEB88A000C4CFA6 /* HTTP */,
 				5E11A3B21AEB76B800C4CFA6 /* ViewController.h */,
@@ -172,6 +181,26 @@
 				5E11A3E81AEBC83200C4CFA6 /* FetchTweets.m */,
 			);
 			name = Parser;
+			sourceTree = "<group>";
+		};
+		5E11A3ED1AEC37FD00C4CFA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5E11A3EE1AEC380B00C4CFA6 /* XIB */,
+				5E11A3F11AEC3C2500C4CFA6 /* FilterAlertView.h */,
+				5E11A3F21AEC3C2500C4CFA6 /* FilterAlertView.m */,
+				5E5588201AEC76C90048715F /* MBProgressHUD.h */,
+				5E5588211AEC76C90048715F /* MBProgressHUD.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5E11A3EE1AEC380B00C4CFA6 /* XIB */ = {
+			isa = PBXGroup;
+			children = (
+				5E11A3EF1AEC383E00C4CFA6 /* FilterAlertView.xib */,
+			);
+			name = XIB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +286,7 @@
 			files = (
 				5E11A3D61AEB77C600C4CFA6 /* TwitterKitResources.bundle in Resources */,
 				5E11A3B71AEB76B800C4CFA6 /* Main.storyboard in Resources */,
+				5E11A3F01AEC383E00C4CFA6 /* FilterAlertView.xib in Resources */,
 				5E11A3BC1AEB76B800C4CFA6 /* LaunchScreen.xib in Resources */,
 				5E11A3B91AEB76B800C4CFA6 /* Images.xcassets in Resources */,
 			);
@@ -296,7 +326,9 @@
 				5E11A3B11AEB76B800C4CFA6 /* AppDelegate.m in Sources */,
 				5E11A3AE1AEB76B800C4CFA6 /* main.m in Sources */,
 				5E11A3E91AEBC83200C4CFA6 /* FetchTweets.m in Sources */,
+				5E5588221AEC76C90048715F /* MBProgressHUD.m in Sources */,
 				5E11A3DB1AEB88DB00C4CFA6 /* WebRequester.m in Sources */,
+				5E11A3F31AEC3C2500C4CFA6 /* FilterAlertView.m in Sources */,
 				5E11A3EC1AEBE28600C4CFA6 /* HomeViewController.m in Sources */,
 				5E11A3DF1AEBA9B900C4CFA6 /* Model.m in Sources */,
 			);
@@ -503,6 +535,7 @@
 				5E11A3CD1AEB76B800C4CFA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E11A3CE1AEB76B800C4CFA6 /* Build configuration list for PBXNativeTarget "TrueTweetTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +544,7 @@
 				5E11A3D01AEB76B800C4CFA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

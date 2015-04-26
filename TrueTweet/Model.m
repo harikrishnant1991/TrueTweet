@@ -58,6 +58,7 @@
         if (success)
         {
             //Handle success response
+            _tweets = tweets;
         }
         else
         {
